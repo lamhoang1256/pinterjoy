@@ -8,7 +8,11 @@ const StyledHeader = styled.div`
 `;
 
 const Header = () => {
-  return <StyledHeader>Header</StyledHeader>;
+  return (
+    <StyledHeader>
+      <h1 className='text-red-500'>Header</h1>
+    </StyledHeader>
+  );
 };
 
 export default Header;

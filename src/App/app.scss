@@ -1,4 +1,3 @@
-// Reset SCSS
 html {
   box-sizing: border-box;
 }
@@ -11,29 +10,11 @@ html {
 *:after {
   box-sizing: border-box;
 }
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-picture {
-  margin: 0;
-}
-ul,
-ol {
-  list-style: none;
-}
 input,
 textarea,
 select,
 button {
   outline: none;
-  font-size: 14px;
-  font: inherit;
 }
 input {
   line-height: normal;
@@ -45,9 +26,7 @@ button {
 a {
   text-decoration: none;
 }
-img,
-picture {
+img {
   display: block;
   max-width: 100%;
 }
-// End Reset SCSS
