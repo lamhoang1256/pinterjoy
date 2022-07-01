@@ -1,5 +1,11 @@
+import Pin from "components/common/Pin";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Pin />
+    </div>
+  );
 };
 
 export default Home;
