@@ -1,9 +1,9 @@
-import Pin from "components/common/Pin";
+import HomePins from "modules/home/HomePins";
 
 const Home = () => {
   return (
     <div>
-      <Pin />
+      <HomePins />
     </div>
   );
 };
