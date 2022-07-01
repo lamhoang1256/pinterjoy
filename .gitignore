@@ -25,8 +25,8 @@ yarn-error.log*
 
 # Server
 
-./server/logs
-./server/*.log
-./server/coverage
-./server/node_modules
-./server/dist
+/server/logs
+/server/*.log
+/server/coverage
+/server/node_modules
+/server/dist
