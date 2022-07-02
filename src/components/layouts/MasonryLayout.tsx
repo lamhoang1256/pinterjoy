@@ -1,12 +1,14 @@
 import Masonry from "react-masonry-css";
 import { IPin } from "interfaces";
 import Pin from "components/common/Pin";
+import classNames from "utils/className";
 
 interface MasonryLayoutProps {
   pins: IPin[];
+  className?: string;
 }
 
-const MasonryLayout = ({ pins }: MasonryLayoutProps) => {
+const MasonryLayout = ({ pins, className }: MasonryLayoutProps) => {
   const breakpointColumnsObj = {
     default: 6,
     3000: 8,
@@ -18,15 +20,18 @@ const MasonryLayout = ({ pins }: MasonryLayoutProps) => {
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
+      className={classNames("my-masonry-grid", className)}
       columnClassName="my-masonry-grid_column"
     >
       {pins.map((pin: IPin) => (
-        // eslint-disable-next-line no-underscore-dangle
         <Pin data={pin} key={pin._id} />
       ))}
     </Masonry>
   );
+};
+
+MasonryLayout.defaultProps = {
+  className: "",
 };
 
 export default MasonryLayout;

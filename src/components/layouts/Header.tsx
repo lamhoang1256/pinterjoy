@@ -1,10 +1,14 @@
 import Button from "components/button";
 import SearchBox from "components/searchbox";
+import { path } from "constants/path";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="py-5 flex items-center justify-between gap-x-8">
-      <h2 className="text-rede7">Pinterjoy</h2>
+      <Link to={path.home}>
+        <h2 className="text-rede7">Pinterjoy</h2>
+      </Link>
       <SearchBox className="flex-1 p-3 border-[1px] border-[#eee]" />
       <img
         className="w-10 h-10 rounded-full"

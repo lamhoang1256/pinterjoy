@@ -4,6 +4,8 @@ import Button from "components/button";
 import IconRedirect from "components/icons/IconRedirect";
 import IconDownload from "components/icons/IconDownload";
 import { path } from "constants/path";
+import PinAuthor from "modules/pin/PinAuthor";
+import PinTitle from "modules/pin/PinTitle";
 
 interface PinProps {
   data: IPin;
@@ -48,11 +50,8 @@ const Pin = ({ data }: PinProps) => {
           </div>
         )}
       </div>
-      <h3 className="text-sm font-semibold mt-2 line-clamp-2">{title}</h3>
-      <div className="flex items-center gap-2 mt-2">
-        <img className="w-7 h-7 rounded-full" src={postedBy.image} alt="avatar" />
-        <span className="text-black4a text-sm">{postedBy.userName}</span>
-      </div>
+      <PinTitle className="text-sm font-semibold mt-2 line-clamp-2">{title}</PinTitle>
+      <PinAuthor postedBy={postedBy} />
     </div>
   );
 };

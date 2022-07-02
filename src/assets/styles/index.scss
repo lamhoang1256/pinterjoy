@@ -19,6 +19,11 @@
     font-size: 20px;
     font-weight: 500;
   }
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
 }
 
 @layer utilities {
@@ -35,5 +40,8 @@
   }
   .my-masonry-grid_column > div {
     margin-bottom: 30px;
+  }
+  .shadow-light {
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 20px 0px;
   }
 }

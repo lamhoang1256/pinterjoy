@@ -28,3 +28,31 @@ export interface IPin {
     };
   }[];
 }
+
+export interface IPinDetail {
+  _id: string;
+  about: string;
+  category: string;
+  comments: {
+    _key: string;
+    comment: string;
+    postedBy: {
+      _id: string;
+      image: string;
+      userName: string;
+    };
+  }[];
+  destination: string;
+  image: {
+    asset: {
+      url: string;
+    };
+  };
+  postedBy: {
+    _id: string;
+    image: string;
+    userName: string;
+  };
+  save: any;
+  title: string;
+}
