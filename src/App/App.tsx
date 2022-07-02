@@ -4,6 +4,7 @@ import SignIn from "pages/SignIn/SignIn";
 import { path } from "constants/path";
 import Home from "pages/Home/Home";
 import PinDetail from "pages/PinDetail/PinDetail";
+import Profile from "pages/Profile/Profile";
 import "./app.scss";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Route path={path.home} element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path={`${path.detail}/:id`} element={<PinDetail />} />
+          <Route path={`${path.profile}/:id`} element={<Profile />} />
         </Route>
         <Route path={path.signIn} element={<SignIn />} />
       </Routes>

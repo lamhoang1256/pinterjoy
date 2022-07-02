@@ -3,4 +3,5 @@ export const path = {
   detail: "/detail",
   signIn: "/sign-in",
   search: "/search",
+  profile: "/profile",
 };

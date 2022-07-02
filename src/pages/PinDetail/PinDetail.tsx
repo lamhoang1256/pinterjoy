@@ -27,7 +27,6 @@ const PinDetail = () => {
           const queryMorePin = pinDetailMorePinQuery(data?.[0]);
           client.fetch(queryMorePin).then((response) => {
             setPins(response);
-            console.log("response: ", response);
           });
         }
         setLoading(false);

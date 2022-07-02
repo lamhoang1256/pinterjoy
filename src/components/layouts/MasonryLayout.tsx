@@ -1,6 +1,6 @@
 import Masonry from "react-masonry-css";
 import { IPin } from "interfaces";
-import Pin from "components/common/Pin";
+import Pin from "modules/pin/Pin";
 import classNames from "utils/className";
 
 interface MasonryLayoutProps {
