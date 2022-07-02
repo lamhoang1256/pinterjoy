@@ -13,7 +13,13 @@ interface PinAuthorProps {
 
 const PinAuthor = ({ postedBy }: PinAuthorProps) => {
   return (
-    <Link to={`${path.profile}/${postedBy?._id}`} className="mt-3 flex items-center gap-x-3">
+    <Link
+      to={`${path.profile}/${postedBy?._id}`}
+      className="mt-3 flex items-center gap-x-3"
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+    >
       <PinAvatar url={postedBy?.image} />
       <PinUsername>{postedBy.userName}</PinUsername>
     </Link>
