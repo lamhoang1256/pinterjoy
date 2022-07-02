@@ -37,7 +37,7 @@ const Pin = ({ data }: PinProps) => {
               </ButtonAction>
               <ButtonSave save={save} />
             </div>
-            <ButtonAction url={destination}>
+            <ButtonAction url={destination} target="_blank">
               <IconRedirect />
             </ButtonAction>
           </div>

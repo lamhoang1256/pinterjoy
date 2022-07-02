@@ -23,7 +23,7 @@ const MasonryLayout = ({ pins, className }: MasonryLayoutProps) => {
       className={classNames("my-masonry-grid", className)}
       columnClassName="my-masonry-grid_column"
     >
-      {pins.map((pin: IPin) => (
+      {pins?.map((pin: IPin) => (
         <Pin data={pin} key={pin._id} />
       ))}
     </Masonry>

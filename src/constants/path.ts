@@ -4,5 +4,5 @@ export const path = {
   signIn: "/sign-in",
   search: "/search",
   profile: "/profile",
-  randomImage: "https://source.unsplash.com/1440x500/?nature,photography,technology",
+  pinAddNew: "/pinAddNew",
 };

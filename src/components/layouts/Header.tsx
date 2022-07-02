@@ -15,7 +15,7 @@ const Header = () => {
         src="https://cdn.dribbble.com/users/8713191/avatars/normal/data?1627916100"
         alt="avatar"
       />
-      <Button className="text-white bg-linearRed h-[46px] px-6 rounded-xl">Upload</Button>
+      <Button className="bg-linearRed text-white rounded-lg">Upload</Button>
     </header>
   );
 };

@@ -1,24 +1,34 @@
 /* eslint-disable react/button-has-type */
 import { ButtonHTMLAttributes } from "react";
 import { Link } from "react-router-dom";
+import classNames from "utils/className";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   to?: string;
+  className?: string;
   children: React.ReactNode;
 }
 
-const Button = ({ to, type, children, ...props }: ButtonProps) => {
+const Button = ({ to, type, children, className, ...props }: ButtonProps) => {
   if (to) {
     return (
       <Link to={to}>
-        <button type={type} className="h-[56px] px-4 bg-[#eee]" {...props}>
+        <button
+          type={type}
+          className={classNames("h-[56px] font-semibold px-4 bg-[#eee]", className)}
+          {...props}
+        >
           {children}
         </button>
       </Link>
     );
   }
   return (
-    <button type={type} className="h-[56px] px-4 bg-[#eee]" {...props}>
+    <button
+      type={type}
+      className={classNames("font-semibold h-[56px] px-4 bg-[#eee]", className)}
+      {...props}
+    >
       {children}
     </button>
   );
@@ -26,6 +36,7 @@ const Button = ({ to, type, children, ...props }: ButtonProps) => {
 
 Button.defaultProps = {
   to: "",
+  className: "",
 };
 
 export default Button;

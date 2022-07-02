@@ -5,6 +5,7 @@ import { path } from "constants/path";
 import Home from "pages/Home/Home";
 import PinDetail from "pages/PinDetail/PinDetail";
 import Profile from "pages/Profile/Profile";
+import PinAddNew from "modules/pin/PinAddNew";
 import "./app.scss";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path={`${path.detail}/:id`} element={<PinDetail />} />
           <Route path={`${path.profile}/:id`} element={<Profile />} />
+          <Route path={path.pinAddNew} element={<PinAddNew />} />
         </Route>
         <Route path={path.signIn} element={<SignIn />} />
       </Routes>

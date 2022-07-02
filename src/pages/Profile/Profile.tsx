@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { IUser } from "interfaces";
-import { client } from "utils/client";
-import { userQuery } from "utils/query";
 import LoadingSpinner from "components/loading";
+import { IUser } from "interfaces";
+import ProfileAlbum from "modules/user/ProfileAlbum";
 import ProfileBanner from "modules/user/ProfileBanner";
 import ProfileUser from "modules/user/ProfileUser";
-import { path } from "constants/path";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { client } from "utils/client";
+import { userQuery } from "utils/query";
 
 const Profile = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<IUser>(Object);
-  const query = userQuery(id);
+  const query = userQuery(id || "");
+  const randomImage = "https://source.unsplash.com/1440x500/?nature,photography,technology";
 
   useEffect(() => {
     setLoading(true);
@@ -28,10 +29,11 @@ const Profile = () => {
 
   if (loading) return <LoadingSpinner />;
   return (
-    <div>
-      <ProfileBanner url={path.randomImage} />
+    <>
+      <ProfileBanner url={randomImage} />
       <ProfileUser image={user.image} userName={user.userName} />
-    </div>
+      <ProfileAlbum />
+    </>
   );
 };
 

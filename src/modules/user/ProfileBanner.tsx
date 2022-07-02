@@ -4,7 +4,7 @@ interface ProfileBannerProps {
 
 const ProfileBanner = ({ url }: ProfileBannerProps) => {
   return (
-    <div className="w-full h-[500px] rounded-xl overflow-hidden">
+    <div className="w-full h-[400px] rounded-xl overflow-hidden">
       <img src={url} className="w-full h-full object-covers" alt="banner" />
     </div>
   );
