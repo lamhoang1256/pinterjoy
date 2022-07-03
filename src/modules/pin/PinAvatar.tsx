@@ -1,3 +1,4 @@
+import Image from "components/image/Image";
 import classNames from "utils/className";
 
 interface PinAvatarProps {
@@ -7,8 +8,8 @@ interface PinAvatarProps {
 
 const PinAvatar = ({ url, className }: PinAvatarProps) => {
   return (
-    <img
-      src={url}
+    <Image
+      url={url}
       alt="avatar"
       className={classNames("w-8 h-8 rounded-full flex-shrink-0", className)}
     />

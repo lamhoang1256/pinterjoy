@@ -8,6 +8,7 @@ import IconDownload from "components/icons/IconDownload";
 import PinAuthor from "modules/pin/PinAuthor";
 import ButtonAction from "components/button/ButtonAction";
 import ButtonSave from "components/button/ButtonSave";
+import Image from "components/image/Image";
 
 interface PinProps {
   data: IPin;
@@ -28,7 +29,7 @@ const Pin = ({ data }: PinProps) => {
       onClick={() => navigate(`${path.detail}/${_id}`)}
     >
       <div className="relative">
-        <img className="rounded-lg w-full" src={image.asset.url} alt="pin" />
+        <Image className="rounded-lg w-full" url={image.asset.url} alt="pin" />
         {pinHovered && (
           <div className="absolute inset-0 p-3 flex flex-col justify-between bg-gray-900 bg-opacity-70">
             <div className="flex items-center justify-between">
