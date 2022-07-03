@@ -3,7 +3,7 @@ interface FormGroupProps {
 }
 
 const FormGroup = ({ children }: FormGroupProps) => {
-  return <div className="flex flex-col mb-4 lg:mb-5 gap-y-2 lg:gap-y-3">{children}</div>;
+  return <div className="flex flex-col mb-2 lg:mb-[10px] gap-y-2">{children}</div>;
 };
 
 export default FormGroup;

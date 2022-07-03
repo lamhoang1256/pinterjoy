@@ -4,5 +4,5 @@ export const path = {
   signIn: "/sign-in",
   search: "/search",
   profile: "/profile",
-  pinAddNew: "/pinAddNew",
+  addPin: "/add-pin",
 };

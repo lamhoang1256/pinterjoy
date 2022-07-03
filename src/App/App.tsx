@@ -16,7 +16,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path={`${path.detail}/:id`} element={<PinDetail />} />
           <Route path={`${path.profile}/:id`} element={<Profile />} />
-          <Route path={path.pinAddNew} element={<PinAddNew />} />
+          <Route path={path.addPin} element={<PinAddNew />} />
         </Route>
         <Route path={path.signIn} element={<SignIn />} />
       </Routes>
