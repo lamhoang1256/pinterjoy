@@ -15,7 +15,7 @@ const Select = ({ name, categories, ...props }: SelectProps) => {
       <Field
         as="select"
         id={name}
-        className="border-[1px] p-4 border-gray92 rounded-md"
+        className="border-[1px] p-[14px] border-gray92 rounded-md"
         {...field}
         {...props}
       >

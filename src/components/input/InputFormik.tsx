@@ -10,8 +10,9 @@ const InputFormik = ({ name, placeholder, ...props }: InputFormikProps) => {
   return (
     <>
       <input
-        className="p-3 transition-all bg-white border border-gray92 rounded-lg outline-none focus:border-blue-500"
+        className="p-[14px] transition-all bg-white border border-gray92 rounded-lg outline-none focus:border-blue-500"
         {...field}
+        placeholder={placeholder}
         {...props}
       />
       {meta.touched && meta.error && <p className="text-sm text-red-500">{meta.error}</p>}
