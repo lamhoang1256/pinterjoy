@@ -7,16 +7,19 @@ import LoadingSpinner from "components/loading";
 const HomePins = () => {
   const [loading, setLoading] = useState(true);
   const [pins, setPins] = useState([]);
-  useEffect(() => {
+  const fetchPins = async () => {
     setLoading(true);
     try {
-      client.fetch(pinGetAll).then((data) => {
-        setPins(data);
-        setLoading(false);
-      });
+      const data = await client.fetch(pinGetAll);
+      setPins(data);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchPins();
   }, []);
 
   if (loading) return <LoadingSpinner />;

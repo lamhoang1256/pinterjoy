@@ -21,7 +21,7 @@ const PinAuthor = ({ postedBy }: PinAuthorProps) => {
       }}
     >
       <PinAvatar url={postedBy?.image} />
-      <PinUsername>{postedBy.userName}</PinUsername>
+      <PinUsername>{postedBy?.userName}</PinUsername>
     </Link>
   );
 };

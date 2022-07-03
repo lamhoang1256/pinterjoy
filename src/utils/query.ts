@@ -43,7 +43,6 @@ export const pinGetAll = `*[_type == "pin"] | order(_createdAt desc) {
   },
   _id,
   destination,
-  title,
   postedBy->{
     _id,
     userName,

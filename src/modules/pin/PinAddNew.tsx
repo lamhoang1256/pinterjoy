@@ -1,10 +1,11 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { categories } from "constants/data";
 import { LocalStorage } from "constants/localStorage";
+import { path } from "constants/path";
 import { pinSchema } from "constants/schema";
-import { toast } from "react-toastify";
 import { client } from "utils/client";
 import FormGroup from "components/common/FormGroup";
 import Label from "components/label/Label";
@@ -12,36 +13,36 @@ import InputFormik from "components/input/InputFormik";
 import Select from "components/select/Select";
 import Button from "components/button";
 import ImageUpload from "components/image/ImageUpload";
-import { path } from "constants/path";
 
 const PinAddNew = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem(LocalStorage.user) || "{}");
   const [image, setImage] = useState<any>();
-
   const handleAddNewPin = async (values: any) => {
+    if (!image?._id) {
+      toast.error("Please choose image");
+      return;
+    }
     try {
-      if (image?._id) {
-        const doc = {
-          _type: "pin",
-          ...values,
-          image: {
-            _type: "image",
-            asset: {
-              _type: "reference",
-              _ref: image?._id,
-            },
+      const doc = {
+        _type: "pin",
+        ...values,
+        image: {
+          _type: "image",
+          asset: {
+            _type: "reference",
+            _ref: image?._id,
           },
-          userId: user?.uid,
-          postedBy: {
-            _type: "postedBy",
-            _ref: user?.uid,
-          },
-        };
-        await client.create(doc);
-        toast.success("Add new pin successfully!");
-        navigate(path.home);
-      }
+        },
+        userId: user?.uid,
+        postedBy: {
+          _type: "postedBy",
+          _ref: user?.uid,
+        },
+      };
+      await client.create(doc);
+      toast.success("Add new pin successfully!");
+      navigate(path.home);
     } catch (error: any) {
       toast.error(error?.message);
     }
