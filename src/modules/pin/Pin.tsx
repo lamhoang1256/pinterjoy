@@ -69,7 +69,7 @@ const Pin = ({ data }: PinProps) => {
       onClick={() => navigate(`${path.detail}/${_id}`)}
     >
       <div className="relative">
-        <Image className="rounded-lg w-full" url={image.asset.url} alt="pin" />
+        <Image className="rounded-lg w-full" url={image?.asset?.url} alt="pin" />
         {pinHovered && (
           <div className="absolute inset-0 p-3 flex flex-col justify-between bg-gray-900 bg-opacity-70">
             <div className="flex items-center justify-between">

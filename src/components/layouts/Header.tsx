@@ -1,6 +1,5 @@
-import Button from "components/button";
-import SearchBox from "components/searchbox";
 import { path } from "constants/path";
+import Button from "components/button";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -9,7 +8,6 @@ const Header = () => {
       <Link to={path.home}>
         <h2 className="text-rede7">Pinterjoy</h2>
       </Link>
-      <SearchBox className="flex-1 p-3 border-[1px] border-[#eee]" />
       <img
         className="w-10 h-10 rounded-full"
         src="https://cdn.dribbble.com/users/8713191/avatars/normal/data?1627916100"
