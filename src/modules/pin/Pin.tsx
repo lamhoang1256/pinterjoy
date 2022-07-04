@@ -9,7 +9,7 @@ import Image from "components/image/Image";
 import { LocalStorage } from "constants/localStorage";
 import { path } from "constants/path";
 import { IPin } from "interfaces";
-import PinAuthor from "modules/pin/PinAuthor";
+import PinAuthor from "modules/pin/parts/PinAuthor";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

@@ -1,5 +1,5 @@
-import PinAvatar from "./PinAvatar";
-import PinUsername from "./PinUsername";
+import PinAvatar from "./parts/PinAvatar";
+import PinUsername from "./parts/PinUsername";
 
 interface PinCommentsProps {
   comments: {

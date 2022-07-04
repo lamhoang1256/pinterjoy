@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { IPin, IPinDetail } from "interfaces";
 import { client } from "utils/client";
 import { pinDetailMorePinQuery, pinGetSingle } from "utils/query";
-import PinTitle from "modules/pin/PinTitle";
-import PinDesc from "modules/pin/PinDesc";
-import PinImage from "modules/pin/PinImage";
-import PinAuthor from "modules/pin/PinAuthor";
+import PinTitle from "modules/pin/parts/PinTitle";
+import PinDesc from "modules/pin/parts/PinDesc";
+import PinImage from "modules/pin/parts/PinImage";
+import PinAuthor from "modules/pin/parts/PinAuthor";
 import PinComments from "modules/pin/PinComments";
 import LoadingSpinner from "components/loading";
 import MasonryLayout from "components/layouts/MasonryLayout";
+import PinAddComment from "modules/pin/parts/PinAddComment";
 
 const PinDetail = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const PinDetail = () => {
   const [detail, setDetail] = useState<IPinDetail>(Object);
   const [pins, setPins] = useState<IPin[]>([]);
 
-  useEffect(() => {
+  const fetchPinDetail = () => {
     setLoading(true);
     try {
       client.fetch(query).then((data) => {
@@ -34,6 +35,9 @@ const PinDetail = () => {
     } catch (error) {
       setLoading(false);
     }
+  };
+  useEffect(() => {
+    fetchPinDetail();
   }, [query, id]);
 
   if (loading) return <LoadingSpinner />;
@@ -42,11 +46,12 @@ const PinDetail = () => {
     <div>
       <div className="flex gap-5 max-w-[1000px] mx-auto shadow-light p-5 rounded-2xl">
         <PinImage url={image.asset.url} alt={title} />
-        <div>
+        <div className="flex-1">
           <PinTitle>{title}</PinTitle>
           <PinDesc>{about}</PinDesc>
           <PinAuthor postedBy={postedBy} />
           <PinComments comments={comments} />
+          <PinAddComment id={id || ""} fetchPinDetail={fetchPinDetail} />
         </div>
       </div>
       <h2 className="my-10 text-center">More like this</h2>
