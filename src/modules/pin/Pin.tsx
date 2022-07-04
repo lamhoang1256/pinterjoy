@@ -1,14 +1,17 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { useState } from "react";
-import { IPin } from "interfaces";
-import { useNavigate } from "react-router-dom";
-import { path } from "constants/path";
-import IconRedirect from "components/icons/IconRedirect";
-import IconDownload from "components/icons/IconDownload";
-import PinAuthor from "modules/pin/PinAuthor";
 import ButtonAction from "components/button/ButtonAction";
+import ButtonDelete from "components/button/ButtonDelete";
 import ButtonSave from "components/button/ButtonSave";
+import IconDownload from "components/icons/IconDownload";
+import IconRedirect from "components/icons/IconRedirect";
+import IconTrash from "components/icons/IconTrash";
 import Image from "components/image/Image";
+import { LocalStorage } from "constants/localStorage";
+import { path } from "constants/path";
+import { IPin } from "interfaces";
+import PinAuthor from "modules/pin/PinAuthor";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface PinProps {
   data: IPin;
@@ -16,6 +19,7 @@ interface PinProps {
 
 const Pin = ({ data }: PinProps) => {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem(LocalStorage.user) || "{}");
   const { _id, image, destination, postedBy, save } = data;
   const [pinHovered, setPinHovered] = useState(false);
 
@@ -36,11 +40,18 @@ const Pin = ({ data }: PinProps) => {
               <ButtonAction url={`${image.asset.url}?dl=`}>
                 <IconDownload />
               </ButtonAction>
-              <ButtonSave save={save} />
+              <ButtonSave save={save} id={_id} />
             </div>
-            <ButtonAction url={destination} target="_blank">
-              <IconRedirect />
-            </ButtonAction>
+            <div className="flex items-center justify-between">
+              <ButtonAction url={destination} target="_blank">
+                <IconRedirect />
+              </ButtonAction>
+              {postedBy?._id === user?.uid && (
+                <ButtonDelete id={_id}>
+                  <IconTrash />
+                </ButtonDelete>
+              )}
+            </div>
           </div>
         )}
       </div>
