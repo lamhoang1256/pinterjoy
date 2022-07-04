@@ -14,7 +14,7 @@ module.exports = {
         black31: "#312e2e",
       },
       backgroundImage: {
-        linearRed: "linear-gradient(to right,#e71e27 ,#b3117e )",
+        linearRed: "linear-gradient(to right, #e71e27 ,#b3117e)",
       },
     },
   },
