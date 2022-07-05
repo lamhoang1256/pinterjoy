@@ -32,9 +32,9 @@ const Search = () => {
 
   return (
     <div>
-      <SearchBox className="flex-1 p-3 border-[1px] border-[#eee]" onChangeValue={setSearchTerm} />
+      <SearchBox onChangeValue={setSearchTerm} />
       {loading && <LoadingSpinner />}
-      {!loading && <MasonryLayout pins={pins} />}
+      {!loading && <MasonryLayout pins={pins} className="mt-8" />}
     </div>
   );
 };

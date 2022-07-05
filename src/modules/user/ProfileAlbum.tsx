@@ -40,8 +40,18 @@ const ProfileAlbum = () => {
   return (
     <div>
       <div className="flex items-center justify-center gap-x-5">
-        <Button onClick={onChangeTab}>Created</Button>
-        <Button onClick={onChangeTab}>Saved</Button>
+        <Button
+          onClick={onChangeTab}
+          className={type === "Created" ? "bg-linearRed rounded-lg text-white" : "rounded-lg"}
+        >
+          Created
+        </Button>
+        <Button
+          onClick={onChangeTab}
+          className={type === "Saved" ? "bg-linearRed rounded-lg text-white" : "rounded-lg"}
+        >
+          Saved
+        </Button>
       </div>
       <div className="my-10">
         {pins?.length > 0 ? (

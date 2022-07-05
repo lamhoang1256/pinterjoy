@@ -15,7 +15,10 @@ const Button = ({ to, type, children, className, ...props }: ButtonProps) => {
       <Link to={to}>
         <button
           type={type}
-          className={classNames("h-[50px] font-semibold px-4 bg-[#eee]", className)}
+          className={classNames(
+            "h-[50px] font-semibold px-4 bg-[#eee] transition-all duration-300",
+            className,
+          )}
           {...props}
         >
           {children}
@@ -26,7 +29,10 @@ const Button = ({ to, type, children, className, ...props }: ButtonProps) => {
   return (
     <button
       type={type}
-      className={classNames("font-semibold h-[50px] px-4 bg-[#eee]", className)}
+      className={classNames(
+        "font-semibold h-[50px] px-4 bg-[#eee] transition-all duration-300",
+        className,
+      )}
       {...props}
     >
       {children}
