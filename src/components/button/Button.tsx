@@ -16,7 +16,7 @@ const Button = ({ to, type, children, className, ...props }: ButtonProps) => {
         <button
           type={type}
           className={classNames(
-            "h-[50px] font-semibold px-4 bg-[#eee] transition-all duration-300",
+            "h-11 md:h-[50px] font-semibold px-3 md:px-4 bg-[#eee] transition-all duration-300",
             className,
           )}
           {...props}
@@ -30,7 +30,7 @@ const Button = ({ to, type, children, className, ...props }: ButtonProps) => {
     <button
       type={type}
       className={classNames(
-        "font-semibold h-[50px] px-4 bg-[#eee] transition-all duration-300",
+        "font-semibold h-11 md:h-[50px] px-4 bg-[#eee] transition-all duration-300",
         className,
       )}
       {...props}

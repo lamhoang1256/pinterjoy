@@ -34,14 +34,16 @@ const PinAddComment = ({ id, fetchPinDetail }: PinAddCommentProps) => {
   };
 
   return (
-    <div className="mt-10 flex items-center gap-x-3">
-      <PinAvatar url={user?.photoURL} />
-      <input
-        type="text"
-        placeholder="Add new comment..."
-        className="flex-1 border-[1px] h-11 px-5 border-gray92 rounded-3xl"
-        onChange={(e) => setComment(e.target.value)}
-      />
+    <div className="mt-4 flex flex-col md:flex-row md:items-center gap-3">
+      <div className="flex flex-1 gap-x-3 items-center">
+        <PinAvatar url={user?.photoURL} />
+        <input
+          type="text"
+          placeholder="Add new comment..."
+          className="flex-1 border-[1px] h-12 px-5 border-gray92 rounded-3xl"
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </div>
       <Button onClick={handleAddNewComment}>Add new</Button>
     </div>
   );

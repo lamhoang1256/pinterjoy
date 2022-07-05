@@ -44,7 +44,7 @@ const PinDetail = () => {
   const { title, about, postedBy, image, comments } = detail;
   return (
     <div>
-      <div className="flex gap-5 max-w-[1000px] mx-auto shadow-light p-5 rounded-2xl">
+      <div className="flex flex-col lg:flex-row gap-5 max-w-[500px] lg:max-w-[1000px] mx-auto md:shadow-light md:p-5 md:rounded-2xl">
         <PinImage url={image.asset.url} alt={title} />
         <div className="flex-1">
           <PinTitle>{title}</PinTitle>
