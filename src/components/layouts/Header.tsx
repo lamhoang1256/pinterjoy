@@ -6,7 +6,6 @@ import IconSearch from "components/icons/IconSearch";
 
 const Header = () => {
   const user = JSON.parse(localStorage.getItem(LocalStorage.user) || "{}");
-
   return (
     <header className="py-5 flex items-center justify-between md:gap-x-8">
       <Link to={path.home}>
@@ -17,12 +16,7 @@ const Header = () => {
           <IconSearch />
         </Button>
         <Button to={`${path.profile}/${user?.uid}`} className="px-1 bg-transparent">
-          <img
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full"
-            src="https://cdn.dribbble.com/users/8713191/avatars/normal/data?1627916100"
-            alt="avatar"
-          />
-          {/* src={user?.photoURL} */}
+          <img src={user?.photoURL} alt="avatar" className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
         </Button>
         <Button to={path.addPin} className="bg-linearRed text-white rounded-lg">
           Upload
